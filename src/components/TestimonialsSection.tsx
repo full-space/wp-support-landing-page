@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Card } from '@/components/ui/card';
+import OptimizedImage from '@/components/OptimizedImage';
 
 const testimonials = [
   {
@@ -41,10 +42,12 @@ const TestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <Card key={index} className="p-8 bg-white shadow-card">
               <div className="flex items-center mb-6">
-                <img 
-                  src={testimonial.image} 
-                  alt={testimonial.name} 
+                <OptimizedImage
+                  src={testimonial.image}
+                  alt={testimonial.name}
                   className="w-14 h-14 rounded-full mr-4"
+                  width={56}
+                  height={56}
                 />
                 <div>
                   <h4 className="font-bold text-wp-dark">{testimonial.name}</h4>

@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import OptimizedImage from '@/components/OptimizedImage';
 
 const HeroSection = () => {
   return (
@@ -19,20 +20,26 @@ const HeroSection = () => {
           </div>
           <div className="mt-8 flex items-center">
             <div className="flex -space-x-2">
-              <img 
-                src="https://randomuser.me/api/portraits/women/44.jpg" 
-                alt="Cliente" 
+              <OptimizedImage
+                src="https://randomuser.me/api/portraits/women/44.jpg"
+                alt="Cliente"
                 className="w-10 h-10 rounded-full border-2 border-white"
+                width={40}
+                height={40}
               />
-              <img 
-                src="https://randomuser.me/api/portraits/men/86.jpg" 
-                alt="Cliente" 
+              <OptimizedImage
+                src="https://randomuser.me/api/portraits/men/86.jpg"
+                alt="Cliente"
                 className="w-10 h-10 rounded-full border-2 border-white"
+                width={40}
+                height={40}
               />
-              <img 
-                src="https://randomuser.me/api/portraits/women/22.jpg" 
-                alt="Cliente" 
+              <OptimizedImage
+                src="https://randomuser.me/api/portraits/women/22.jpg"
+                alt="Cliente"
                 className="w-10 h-10 rounded-full border-2 border-white"
+                width={40}
+                height={40}
               />
             </div>
             <div className="ml-4">
@@ -51,10 +58,12 @@ const HeroSection = () => {
         </div>
         <div className="md:w-1/2 relative">
           <div className="bg-white p-2 rounded-lg shadow-xl animate-float">
-            <img 
-              src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-              alt="WordPress Dashboard" 
+            <OptimizedImage
+              src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+              alt="WordPress Dashboard"
               className="rounded-lg"
+              width={800}
+              height={600}
             />
           </div>
           <div className="absolute -bottom-6 -left-6 bg-wp-primary text-white p-4 rounded-lg shadow-lg">

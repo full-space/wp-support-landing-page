@@ -1,15 +1,18 @@
 
-import React from 'react';
+import React, { Suspense } from 'react';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
-import ServicesSection from '@/components/ServicesSection';
-import BenefitsSection from '@/components/BenefitsSection';
-import ChecklistSection from '@/components/ChecklistSection';
-import TestimonialsSection from '@/components/TestimonialsSection';
-import PricingSection from '@/components/PricingSection';
-import FAQSection from '@/components/FAQSection';
-import CTASection from '@/components/CTASection';
-import Footer from '@/components/Footer';
+import LazySection from '@/components/LazySection';
+
+// Lazy load dos componentes below-the-fold
+const ServicesSection = React.lazy(() => import('@/components/ServicesSection'));
+const BenefitsSection = React.lazy(() => import('@/components/BenefitsSection'));
+const ChecklistSection = React.lazy(() => import('@/components/ChecklistSection'));
+const TestimonialsSection = React.lazy(() => import('@/components/TestimonialsSection'));
+const PricingSection = React.lazy(() => import('@/components/PricingSection'));
+const FAQSection = React.lazy(() => import('@/components/FAQSection'));
+const CTASection = React.lazy(() => import('@/components/CTASection'));
+const Footer = React.lazy(() => import('@/components/Footer'));
 
 const Index = () => {
   return (
@@ -17,15 +20,53 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
-        <ServicesSection />
-        <BenefitsSection />
-        <ChecklistSection />
-        <TestimonialsSection />
-        <PricingSection />
-        <FAQSection />
-        <CTASection />
+        
+        <LazySection>
+          <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
+            <ServicesSection />
+          </Suspense>
+        </LazySection>
+        
+        <LazySection>
+          <Suspense fallback={<div className="h-96 bg-white animate-pulse" />}>
+            <BenefitsSection />
+          </Suspense>
+        </LazySection>
+        
+        <LazySection>
+          <Suspense fallback={<div className="h-96 bg-white animate-pulse" />}>
+            <ChecklistSection />
+          </Suspense>
+        </LazySection>
+        
+        <LazySection>
+          <Suspense fallback={<div className="h-96 bg-white animate-pulse" />}>
+            <TestimonialsSection />
+          </Suspense>
+        </LazySection>
+        
+        <LazySection>
+          <Suspense fallback={<div className="h-96 bg-wp-light animate-pulse" />}>
+            <PricingSection />
+          </Suspense>
+        </LazySection>
+        
+        <LazySection>
+          <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
+            <FAQSection />
+          </Suspense>
+        </LazySection>
+        
+        <LazySection>
+          <Suspense fallback={<div className="h-96 bg-wp-primary animate-pulse" />}>
+            <CTASection />
+          </Suspense>
+        </LazySection>
       </main>
-      <Footer />
+      
+      <Suspense fallback={<div className="h-32 bg-gray-800 animate-pulse" />}>
+        <Footer />
+      </Suspense>
     </div>
   );
 };
