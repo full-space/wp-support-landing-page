@@ -15,19 +15,7 @@ const HeroSection = () => {
             <Button className="btn-primary text-lg">Ver Planos</Button>
             <Button className="btn-secondary text-lg">Saiba Mais</Button>
           </div>
-          <div className="mt-8 flex items-center">
-            <div className="flex -space-x-2">
-              <OptimizedImage src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente" className="w-10 h-10 rounded-full border-2 border-white" width={40} height={40} />
-              <OptimizedImage src="https://randomuser.me/api/portraits/men/86.jpg" alt="Cliente" className="w-10 h-10 rounded-full border-2 border-white" width={40} height={40} />
-              <OptimizedImage src="https://randomuser.me/api/portraits/women/22.jpg" alt="Cliente" className="w-10 h-10 rounded-full border-2 border-white" width={40} height={40} />
-            </div>
-            <div className="ml-4">
-              <div className="flex items-center">
-                {[...Array(5)].map((_, i) => {})}
-              </div>
-              
-            </div>
-          </div>
+          
         </div>
         <div className="md:w-1/2 relative">
           <div className="bg-white p-2 rounded-lg shadow-xl animate-float">
